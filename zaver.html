@@ -2,14 +2,54 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Zhrnutie a poznatky</title>
 </head>
-<body style="font-family:'Times New Roman', Times, serif; background-color:#FFFFFF; padding:20px;">
-    <h2>Zhrnutie a získané poznatky</h2>
-    <p>V rámci tohto projektu som sa oboznámila s najdôležitejšími nástrojmi elektronického marketingu a pochopila, ako sa tieto techniky uplatňujú v praxi. Uvedomila som si, že úspech online marketingu nespočíva len v technológiách, ale najmä v schopnosti správne pochopiť cieľovú skupinu a efektívne s ňou komunikovať.</p>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>Prehľad nástrojov elektronického marketingu</h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="uvod.html">Úvod</a>
+            <a href="stav.html">Súčasný stav</a>
+            <a href="future.html">Trendy a vývoj</a>
+            <a href="zaver.html" class="active">Zhrnutie</a>
+            <a href="literatura.html">Literatúra</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </nav>
 
-    <p>Najviac ma zaujala prepojenosť marketingu a umelej inteligencie, ktorá umožňuje analyzovať správanie používateľov v reálnom čase. Tiež som si uvedomila, že kvalitný obsah a budovanie dôvery sú stále základom úspešného marketingu.</p>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    <p>Štúdium tejto témy mi poskytlo nový pohľad na fungovanie reklamy v digitálnom svete a ukázalo mi, že elektronický marketing nie je len o predaji, ale aj o budovaní vzťahov so zákazníkmi.</p>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="content-page">
+        <h2>Zhrnutie a získané poznatky</h2>
+        <p>V rámci tohto projektu som sa oboznámila s najdôležitejšími nástrojmi elektronického marketingu a pochopila, ako sa tieto techniky uplatňujú v praxi. Uvedomila som si, že úspech online marketingu nespočíva len v technológiách, ale najmä v schopnosti správne pochopiť cieľovú skupinu a efektívne s ňou komunikovať.</p>
+
+        <p>Najviac ma zaujala prepojenosť marketingu a umelej inteligencie, ktorá umožňuje analyzovať správanie používateľov v reálnom čase. Tiež som si uvedomila, že kvalitný obsah a budovanie dôvery sú stále základom úspešného marketingu.</p>
+
+        <p>Štúdium tejto témy mi poskytlo nový pohľad na fungovanie reklamy v digitálnom svete a ukázalo mi, že elektronický marketing nie je len o predaji, ale aj o budovaní vzťahov so zákazníkmi.</p>
+    </div>
 </body>
 </html>

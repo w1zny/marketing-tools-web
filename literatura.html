@@ -2,15 +2,55 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Použitá literatúra</title>
 </head>
-<body style="font-family:'Times New Roman', Times, serif; background-color:#FFFFFF; padding:20px;">
-    <h2>Použitá literatúra</h2>
-    <ul>
-        <li>Novák, P. (2023). <em>Digitálny marketing v praxi</em>. Bratislava: MarketingPress.</li>
-        <li>Kotler, P., & Keller, K. L. (2016). <em>Marketing Management</em>. Pearson Education.</li>
-        <li>Statista. (2024). Global Digital Advertising Market. Dostupné na: <a href="https://www.statista.com/">https://www.statista.com/</a></li>
-        <li>Chaffey, D., & Ellis-Chadwick, F. (2020). <em>Digital Marketing</em>. Pearson.</li>
-    </ul>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>Prehľad nástrojov elektronického marketingu</h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="uvod.html">Úvod</a>
+            <a href="stav.html">Súčasný stav</a>
+            <a href="future.html">Trendy a vývoj</a>
+            <a href="zaver.html">Zhrnutie</a>
+            <a href="literatura.html" class="active">Literatúra</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </nav>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="content-page">
+        <h2>Použitá literatúra</h2>
+        <ul>
+            <li>Novák, P. (2023). <em>Digitálny marketing v praxi</em>. Bratislava: MarketingPress.</li>
+            <li>Kotler, P., & Keller, K. L. (2016). <em>Marketing Management</em>. Pearson Education.</li>
+            <li>Statista. (2024). Global Digital Advertising Market. Dostupné na: <a href="https://www.statista.com/">https://www.statista.com/</a></li>
+            <li>Chaffey, D., & Ellis-Chadwick, F. (2020). <em>Digital Marketing</em>. Pearson.</li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -2,21 +2,61 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Trendy a vývoj</title>
 </head>
 <body>
-    <h2>Trendy a vývoj elektronického marketingu</h2>
-    <p>Vývoj elektronického marketingu smeruje k čoraz väčšiemu prepojeniu technológií, umelej inteligencie (AI) a dátovej analytiky. Spoločnosti sa snažia lepšie pochopiť správanie zákazníkov, predvídať ich potreby a ponúkať im personalizované riešenia v reálnom čase.</p>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>Prehľad nástrojov elektronického marketingu</h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="uvod.html">Úvod</a>
+            <a href="stav.html">Súčasný stav</a>
+            <a href="future.html" class="active">Trendy a vývoj</a>
+            <a href="zaver.html">Zhrnutie</a>
+            <a href="literatura.html">Literatúra</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </nav>
 
-    <p>Medzi hlavné trendy patria:</p>
-    <ul>
-        <li><strong>Automatizácia marketingu</strong> - systémy, ktoré samostatne spravujú kampane, analyzujú výsledky a optimalizujú výdavky.</li>
-        <li><strong>Umelá inteligencia a chatboty</strong> - personalizovaná komunikácia a rýchlejšie reakcie na otázky zákazníkov.</li>
-        <li><strong>Video marketing a krátke formáty</strong> - platformy ako TikTok a YouTube Shorts dominujú v oslovovaní mladšej generácie.</li>
-        <li><strong>Marketing založený na dátach (data-driven marketing)</strong> - rozhodnutia sú založené na dátach, nie na odhadoch.</li>
-        <li><strong>Interaktívne a 3D reklamy</strong> - virtuálna a rozšírená realita (AR/VR) mení spôsob, akým zákazníci vnímajú produkty.</li>
-    </ul>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    <p><strong>Môj názor:</strong> Verím, že elektronický marketing sa stane ešte viac personalizovaným a bude prepojený s umelou inteligenciou a analýzou dát. Firmy, ktoré dokážu efektívne kombinovať kreativitu s technológiou, získajú výraznú konkurenčnú výhodu.</p>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="content-page">
+        <h2>Trendy a vývoj elektronického marketingu</h2>
+        <p>Vývoj elektronického marketingu smeruje k čoraz väčšiemu prepojeniu technológií, umelej inteligencie (AI) a dátovej analytiky. Spoločnosti sa snažia lepšie pochopiť správanie zákazníkov, predvídať ich potreby a ponúkať im personalizované riešenia v reálnom čase.</p>
+
+        <p>Medzi hlavné trendy patria:</p>
+        <ul>
+            <li><strong>Automatizácia marketingu</strong> - systémy, ktoré samostatne spravujú kampane, analyzujú výsledky a optimalizujú výdavky.</li>
+            <li><strong>Umelá inteligencia a chatboty</strong> - personalizovaná komunikácia a rýchlejšie reakcie na otázky zákazníkov.</li>
+            <li><strong>Video marketing a krátke formáty</strong> - platformy ako TikTok a YouTube Shorts dominujú v oslovovaní mladšej generácie.</li>
+            <li><strong>Marketing založený na dátach (data-driven marketing)</strong> - rozhodnutia sú založené na dátach, nie na odhadoch.</li>
+            <li><strong>Interaktívne a 3D reklamy</strong> - virtuálna a rozšírená realita (AR/VR) mení spôsob, akým zákazníci vnímajú produkty.</li>
+        </ul>
+
+        <p><strong>Môj názor:</strong> Verím, že elektronický marketing sa stane ešte viac personalizovaným a bude prepojený s umelou inteligenciou a analýzou dát. Firmy, ktoré dokážu efektívne kombinovať kreativitu s technológiou, získajú výraznú konkurenčnú výhodu.</p>
+    </div>
 </body>
 </html>
